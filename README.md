@@ -1,13 +1,14 @@
+# ts-rn-android-lock-now
 
-# react-native-lock-task
+### Thanks to https://github.com/fast0490f/react-native-lock-task
 
 ## Getting started
 
-`$ npm install react-native-lock-task --save`
+`$ npm install ts-rn-android-lock-now --save`
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-lock-task`
+`$ react-native link ts-rn-android-lock-now`
 
 ### Settings
 
@@ -51,7 +52,6 @@
 </manifest>
 ```
 
-
 **`yourProject/android/app/src/main/res/values/strings.xml`**
 
 ```diff
@@ -77,19 +77,21 @@
 + </device-admin>
 
 ```
+
 ## Reinstall application
-* Start your emulator
-* Install project 
+
+- Start your emulator
+- Install project
 
 ## Set owner device adb
-* Settings --> Accounts --> Delete All
-* `adb shell dpm set-device-owner com.yourProject/com.rnlocktask.MyAdmin`
+
+- Settings --> Accounts --> Delete All
+- `adb shell dpm set-device-owner com.yourProject/com.rnlocktask.MyAdmin`
 
 ## Usage
-```javascript
-import RNLockTask from 'react-native-lock-task';
 
-RNLockTask.startLockTask();
-RNLockTask.stopLockTask();
-RNLockTask.clearDeviceOwnerApp();
+```javascript
+import RNLockTask from "ts-rn-android-lock-now";
+
+RNLockTask.lockNow();
 ```

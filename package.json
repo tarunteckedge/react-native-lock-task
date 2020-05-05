@@ -1,15 +1,14 @@
-
 {
-  "name": "react-native-lock-task",
+  "name": "ts-rn-android-lock-now",
   "version": "1.1.0",
-  "description": "",
+  "description": "This is used to Lock Android Device",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-  "type": "git",
-  "url": "https://github.com/fast0490f/react-native-lock-taskt"
+    "type": "git",
+    "url": "https://github.com/tarunteckedge/react-native-lock-task"
   },
   "license": "MIT",
   "keywords": [

@@ -28,43 +28,12 @@ public class RNLockTaskModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public  void clearDeviceOwnerApp() {
+  public  void lockNow() {
     try {
       Activity mActivity = reactContext.getCurrentActivity();
       if (mActivity != null) {
         DevicePolicyManager myDevicePolicyManager = (DevicePolicyManager) mActivity.getSystemService(Context.DEVICE_POLICY_SERVICE);
-        myDevicePolicyManager.clearDeviceOwnerApp(mActivity.getPackageName());
-      }
-    } catch (Exception e) {
-    }
-  }
-
-  @ReactMethod
-  public void startLockTask() {
-    try {
-      Activity mActivity = reactContext.getCurrentActivity();
-      if (mActivity != null) {
-        DevicePolicyManager myDevicePolicyManager = (DevicePolicyManager) mActivity.getSystemService(Context.DEVICE_POLICY_SERVICE);
-        ComponentName mDPM = new ComponentName(mActivity, MyAdmin.class);
-
-        if (myDevicePolicyManager.isDeviceOwnerApp(mActivity.getPackageName())) {
-          String[] packages = {mActivity.getPackageName()};
-          myDevicePolicyManager.setLockTaskPackages(mDPM, packages);
-          mActivity.startLockTask();
-        } else {
-          mActivity.startLockTask();
-        }
-      }
-    } catch (Exception e) {
-    }
-  }
-
-  @ReactMethod
-  public  void stopLockTask() {
-    try {
-      Activity mActivity = reactContext.getCurrentActivity();
-      if (mActivity != null) {
-        mActivity.stopLockTask();
+        myDevicePolicyManager.lockNow();
       }
     } catch (Exception e) {
     }
